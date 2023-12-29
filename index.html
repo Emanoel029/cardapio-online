@@ -6,12 +6,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/fontawesome.css">
+  <link rel="stylesheet" href="./css/animate.css">
   <link rel="stylesheet" href="./css/main.css">
 
   <title>Restaurante - Seja bem-vindo</title>
 </head>
 
 <body>
+
+  <div class="container-mensagens" id="container-mensagens">
+
+  </div>
+
+  <a class="botao-carrinho hidden" onclick="cardapio.metodos.abrirCarrinho(true)">
+    <div class="badge-total-carrinho">0</div>
+    <i class="fa fa-shopping-bag"></i>
+  </a>
+
+
   <section class="header">
     <div class="container">
       <nav class="navbar navbar-expand-lg pl-0 pr-0 col">
@@ -28,8 +40,9 @@
             <li class="nav-item"><a href="#cardapio" class="nav-link"><b>Cardápio</b></a></li>
             <li class="nav-item"><a href="#depoimentos" class="nav-link"><b>Depoimentos</b></a></li>
           </ul>
-          <a class="btn btn-white btn-icon">
+          <a class="btn btn-white btn-icon" onclick="cardapio.metodos.abrirCarrinho(true)">
             Meu carrinho <span class="icon">
+              <div class="container-total-carrinho badge-total-carrinho hidden">0</div>
               <i class="fa fa-shopping-bag"></i>
             </span>
           </a>
@@ -361,7 +374,7 @@
   <div class="modal-full hidden" id="modalCarrinho">
     <div class="m-header">
       <div class="container">
-        <a class="btn btn-white btn-sm float-right">
+        <a class="btn btn-white btn-sm float-right" onclick="cardapio.metodos.abrirCarrinho(false)">
           fechar
         </a>
         <div class="etapas">
@@ -483,7 +496,7 @@
 
         </div>
 
-        <div id="ResumeCarrinho" class="row mr-0 ml-0">
+        <div id="resumeCarrinho" class="row mr-0 ml-0 hidden">
           <div class="col-12">
             <p class="title-carrinho mt-4">
               <b>Itens do pedido:</b>
@@ -558,11 +571,11 @@
           </p>
         </div>
 
-        <a class="btn btn-yellow float-right" id="btnEtapaPedido">
+        <a onclick="cardapio.metodos.carregarEtapa(2)" class="btn btn-yellow float-right" id="btnEtapaPedido">
           Continuar
         </a>
 
-        <a class="btn btn-yellow float-right hidden" id="btnEtapaEndereco">
+        <a onclick="cardapio.metodos.carregarEtapa(3)" class="btn btn-yellow float-right hidden" id="btnEtapaEndereco">
           Revizar pedido
         </a>
 
@@ -570,7 +583,7 @@
           Enviar Pedido
         </a>
 
-        <a class="btn btn-white float-right mr-3 hidden" id="btnVoltar">
+        <a onclick="cardapio.metodos.voltarEtapa()" class="btn btn-white float-right mr-3 hidden" id="btnVoltar">
           Voltar
         </a>
 
