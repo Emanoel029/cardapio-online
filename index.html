@@ -64,7 +64,7 @@
               <a class="btn btn-yellow mt-4 mr-3">
                 Ver cardápio
               </a>
-              <a href="#" class="btn btn-white btn-icon-left mt-4">
+              <a href="#" class="btn btn-white btn-icon-left mt-4" id="btnLigar">
                 <span class="icon-left">
                   <i class="fa fa-phone"></i>
                 </span>
@@ -72,13 +72,13 @@
               </a>
             </div>
           </div>
-          <a class="btn btn-sm btn-white btn-social mt-4 mr-3" href="#">
+          <a class="btn btn-sm btn-white btn-social mt-4 mr-3" href="https://www.instagram.com/emanoeltimbo/" target="_blank">
             <i class="fab fa-instagram"></i>
           </a>
           <a class="btn btn-sm btn-white btn-social mt-4 mr-3" href="#">
             <i class="fab fa-facebook"></i>
           </a>
-          <a class="btn btn-sm btn-white btn-social mt-4" href="#">
+          <a id="btnWpp" class="btn btn-sm btn-white btn-social mt-4" href="#" target="_blank">
             <i class="fab fa-whatsapp"></i>
           </a>
         </div>
@@ -261,10 +261,9 @@
               </div>
               <p class="texto-depoimento">
                 <i class="fas fa-quote-left"></i>
-                <span>Um jantar perfeito do começo ao fim. Comida,<br>
-                  experiência, serviço... foi tão maravilhoso que fomos <br>
-                  dois dias seguidos - fato inédito para mim em uma <br>
-                  viagem.
+                <span>Um jantar perfeito do começo ao fim. Comida, experiência,<br>
+                  serviço... foi tão maravilhoso que fomos dois dias seguidos<br>
+                  - fato inédito para mim em uma viagem.
                 </span>
                 <i class="fas fa-quote-right"></i>
               </p>
@@ -296,9 +295,9 @@
 
           </div>
 
-          <a class="btn btn-sm btn-white btn-social active mr-3">1</a>
-          <a class="btn btn-sm btn-white btn-social mr-3">2</a>
-          <a class="btn btn-sm btn-white btn-social">3</a>
+          <a id="btnDepoimento-1" class="btn btn-sm btn-white btn-social mr-3 active" onclick="cardapio.metodos.abrirDepoimento(1)">1</a>
+          <a id="btnDepoimento-2" class="btn btn-sm btn-white btn-social mr-3" onclick="cardapio.metodos.abrirDepoimento(2)">2</a>
+          <a id="btnDepoimento-3" class="btn btn-sm btn-white btn-social" onclick="cardapio.metodos.abrirDepoimento(3)">3</a>
 
         </div>
 
@@ -324,7 +323,9 @@
                   Mande uma mensagem clicando no botão abaixo. <br>
                   Reserve sua data e horário de forma simples e rápida
                 </p>
-                <a class="btn btn-yellow mt-4"> Fazer reserva</a>
+                <a class="btn btn-yellow mt-4" href="#" id="btnReserva" target="_blank">
+                  Fazer reserva
+                </a>
               </div>
 
               <div class="col-5">
@@ -357,13 +358,13 @@
         </div>
 
         <div class="col-3 container-redes-footer">
-          <a class="btn btn-sm btn-white btn-social mr-3" href="#">
+          <a class="btn btn-sm btn-white btn-social mr-3" href="https://www.instagram.com/emanoeltimbo/" target="_blank">
             <i class="fab fa-instagram"></i>
           </a>
           <a class="btn btn-sm btn-white btn-social mr-3" href="#">
             <i class="fab fa-facebook"></i>
           </a>
-          <a class="btn btn-sm btn-white btn-social" href="#">
+          <a id="btnWpp" class="btn btn-sm btn-white btn-social" href="https://wa.me/558881313801?text=Olá! Gostaria de fazer uma *pedido*." target="_blank">
             <i class="fab fa-whatsapp"></i>
           </a>
         </div>

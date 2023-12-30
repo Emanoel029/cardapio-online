@@ -10,11 +10,14 @@ var MEU_ENDERECO = null;
 var VALOR_CARRINHO = 0;
 var VALOR_ENTREGA = 5;
 
-var CELULAR_EMPRESA = "5588999943761";
+var CELULAR_EMPRESA = "5588981313801";
 
 cardapio.eventos = {
   init: () => {
     cardapio.metodos.obterItensCardapio();
+    cardapio.metodos.carregarBotaoLigar();
+    cardapio.metodos.carregarBotaoReserva();
+    cardapio.metodos.carregarWpp();
   },
 };
 
@@ -464,6 +467,44 @@ cardapio.metodos = {
         //https://wa.me/5585991234567?text=ola
       });
     }
+  },
+
+  //Carrega o link do botão reserva
+  carregarBotaoReserva: () => {
+    var texto = "Olá! Gostaria de fazer uma *reserva*";
+
+    let encode = encodeURI(texto);
+    let URL = `https://wa.me/${CELULAR_EMPRESA}?text=${encode}`;
+
+    $("#btnReserva").attr("href", URL);
+  },
+
+  //Carregar o botão ligar
+  carregarBotaoLigar: () => {
+    $("btnLigar").attr("href", `tel:${CELULAR_EMPRESA}`);
+  },
+
+  //Abre o depoimento
+  abrirDepoimento: (depoimento) => {
+    $("#depoimento-1").addClass("hidden");
+    $("#depoimento-2").addClass("hidden");
+    $("#depoimento-3").addClass("hidden");
+
+    $("#btnDepoimento-1").removeClass("active");
+    $("#btnDepoimento-2").removeClass("active");
+    $("#btnDepoimento-3").removeClass("active");
+
+    $("#depoimento-" + depoimento).removeClass("hidden");
+    $("#btnDepoimento-" + depoimento).addClass("active");
+  },
+
+  carregarWpp: () => {
+    var texto = "Olá! Gostaria de fazer uma *pedido*";
+
+    let encode = encodeURI(texto);
+    let URL = `https://wa.me/${CELULAR_EMPRESA}?text=${encode}`;
+
+    $("#btnWpp").attr("href", URL);
   },
 
   //mensagens
