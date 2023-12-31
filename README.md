@@ -5,7 +5,7 @@
 3-Linke para fazer reservas<br>
 4-Sessão de depoimentos<br>
 5-Ligação pelo telefone<br>
-6-Designer Resposivo</p>
+6-Designer Responsivo</p>
 
 <h2>Ferramentas usadas</h2>
 <p>-Bootstrap <br>
